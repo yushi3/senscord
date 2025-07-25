@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sample server configuration. -->
+<!--
+  <server> Element.
+
+  Attributes:
+    - address (or addressPrimary)
+        Type        : string
+        Optional    : Yes (default is empty)
+        Description : The primary listen address and port number of the server.
+                      Example: "127.0.0.1:8080"
+
+    - addressSecondary
+        Type        : string
+        Optional    : Yes (default is empty)
+        Description : The secondary listen address and port number of the server.
+                      Example: "127.0.0.1:8081"
+
+    - client
+        Type        : string ("on" or "off")
+        Optional    : Yes (default is "off")
+        Descrpition : Whether to use the client function on the server side.
+-->
+<server
+    address="127.0.0.1:8080"
+    addressSecondary="127.0.0.1:8081"
+    client="off">
+  <streams>
+    <stream key="pseudo_image_stream.0">
+      <frame buffering="off"/>
+    </stream>
+    <defaults>
+      <frame buffering="on" num="0"/>
+    </defaults>
+  </streams>
+</server>

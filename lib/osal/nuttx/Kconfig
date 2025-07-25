@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2021-2025 Sony Semiconductor Solutions Corporation
+#
+# SPDX-License-Identifier: Apache-2.0
+
+#
+# For a description of the syntax of this configuration file,
+# see the file kconfig-language.txt in the NuttX tools repository.
+#
+
+config EXTERNALS_SENSCORD_OSAL
+	bool "SendCord OSAL Library"
+	default n
+	---help---
+		Enable SensCord OSAL.

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<allocators>
+  <allocator key="_default" type="shared_memory" cacheable="off">
+    <arguments>
+      <argument name="name" value="shared.0"/>
+      <argument name="total_size" value="0x1000000"/>
+    </arguments>
+  </allocator>
+</allocators>

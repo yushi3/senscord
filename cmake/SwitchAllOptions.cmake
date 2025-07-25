@@ -1,0 +1,81 @@
+# SPDX-FileCopyrightText: 2017-2023 Sony Semiconductor Solutions Corporation
+#
+# SPDX-License-Identifier: Apache-2.0
+
+################################################################################
+
+# Script to register new test.
+#  - OPTION_SWITCH  : Specify switching of options with ON / OFF.
+#  - CMAKELISTS_DIR : Where CMakeLists.txt is stored.
+#
+# Usage:
+#   cmake ..
+#   make option_all_enabled
+#     or
+#   make option_all_disabled
+
+if (NOT "${OPTION_SWITCH}" STREQUAL "ON" AND
+    NOT "${OPTION_SWITCH}" STREQUAL "OFF")
+  message(FATAL_ERROR "Invalid option was used.")
+endif()
+
+# Setting options to be enabled.
+set(CMAKE_ARGS
+    # Log
+    "-DSENSCORD_LOG_ENABLED=${OPTION_SWITCH}"
+    "-DSENSCORD_LOG_OSAL_ENABLED=${OPTION_SWITCH}"
+    "-DSENSCORD_LOG_TIME_ENABLED=${OPTION_SWITCH}"
+
+    # Status
+    "-DSENSCORD_STATUS_MESSAGE_ENABLED=${OPTION_SWITCH}"
+    "-DSENSCORD_STATUS_TRACE_ENABLED=${OPTION_SWITCH}"
+
+    # Multi-process
+    "-DSENSCORD_SERVER=${OPTION_SWITCH}"
+    "-DSENSCORD_SERVER_ROS=${OPTION_SWITCH}"
+    "-DSENSCORD_SERVER_WEBSOCKET=${OPTION_SWITCH}"
+    "-DSENSCORD_SERVER_SETTING=${OPTION_SWITCH}"
+    "-DSENSCORD_SERVER_SEARCH_SSDP=${OPTION_SWITCH}"
+    "-DSENSCORD_SERVER_SEARCH_UCOM=${OPTION_SWITCH}"
+
+    # Recorder
+    "-DSENSCORD_RECORDER_RAW=${OPTION_SWITCH}"
+    "-DSENSCORD_RECORDER_SKV=${OPTION_SWITCH}"
+    "-DSENSCORD_RECORDER_LOADER=${OPTION_SWITCH}"
+    "-DSENSCORD_RECORDER_BIN=${OPTION_SWITCH}"
+    "-DSENSCORD_RECORDER_PNM=${OPTION_SWITCH}"
+
+    # Player
+    "-DSENSCORD_PLAYER_RAW=${OPTION_SWITCH}"
+    "-DSENSCORD_PLAYER_SKV=${OPTION_SWITCH}"
+
+    # API
+    "-DSENSCORD_API_C=${OPTION_SWITCH}"
+    "-DSENSCORD_API_PYTHON=${OPTION_SWITCH}"
+    "-DSENSCORD_API_CSHARP=${OPTION_SWITCH}"
+    "-DSENSCORD_API_JAVA=${OPTION_SWITCH}"
+    "-DSENSCORD_API_WASM=${OPTION_SWITCH}"
+
+    # Core functions
+    "-DSENSCORD_STREAM_VERSION=${OPTION_SWITCH}"
+    "-DSENSCORD_STREAM_EVENT_ARGUMENT=${OPTION_SWITCH}"
+    "-DSENSCORD_SERIALIZE=${OPTION_SWITCH}"
+
+    # Allocator
+    "-DSENSCORD_ALLOCATOR_SHARED_MEMORY=${OPTION_SWITCH}"
+    "-DSENSCORD_ALLOCATOR_SAMPLE=${OPTION_SWITCH}"
+
+    # Component
+    "-DSENSCORD_COMPONENT_PSEUDO=${OPTION_SWITCH}"
+    "-DSENSCORD_COMPONENT_V4L2=${OPTION_SWITCH}"
+
+    # others...
+    "-DSENSCORD_SAMPLE=${OPTION_SWITCH}"
+   )
+
+# Specifying the build directory.
+if (NOT DEFINED CMAKELISTS_DIR)
+  set(CMAKELISTS_DIR ".")
+endif()
+
+execute_process(COMMAND ${CMAKE_COMMAND} ${CMAKE_ARGS} ${CMAKELISTS_DIR})

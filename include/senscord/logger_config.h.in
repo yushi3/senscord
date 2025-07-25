@@ -1,0 +1,16 @@
+/*
+ * SPDX-FileCopyrightText: 2022 Sony Semiconductor Solutions Corporation
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+#ifndef SENSCORD_LOGGER_CONFIG_H_
+#define SENSCORD_LOGGER_CONFIG_H_
+
+#cmakedefine SENSCORD_LOG_TIME_ENABLED
+#cmakedefine SENSCORD_LOG_TYPE_CONSOLE
+#cmakedefine SENSCORD_LOG_TYPE_FILE
+#cmakedefine SENSCORD_LOG_TYPE_SYSLOG
+
+#cmakedefine SENSCORD_OSAL_LOG_LEVEL ${SENSCORD_OSAL_LOG_LEVEL}
+
+#endif  // SENSCORD_LOGGER_CONFIG_H_

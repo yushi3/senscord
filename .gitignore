@@ -1,0 +1,23 @@
+# build dir
+build/
+build_arm/
+doc/spec/build/html
+doc/spec/build/doctrees
+doc/design/build/html
+doc/design/build/doctrees
+
+# Python
+*.pyc
+
+# drivers build data
+drivers/*/.*
+drivers/*/*.o
+drivers/*/*.gcno
+drivers/*/*.mod.*
+drivers/*/*.ko
+drivers/*/*.symvers
+drivers/*/*.order
+drivers/*/*.gcda
+
+# macOS temporary file
+*.DS_Store

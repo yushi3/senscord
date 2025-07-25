@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server client="off">
+  <listeners>
+    <listener
+        connection="tcp"
+        address="127.0.0.1:8080"
+        addressSecondary="127.0.0.1:8081" />
+  </listeners>
+
+  <streams>
+    <defaults>
+      <frame buffering="off"/>
+    </defaults>
+  </streams>
+</server>

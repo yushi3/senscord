@@ -1,0 +1,71 @@
+cmake_minimum_required(VERSION 3.4)
+
+project(xml2)
+
+set(LIBXML2_SOURCES
+"SAX.c"
+"entities.c"
+"encoding.c"
+"error.c"
+"parserInternals.c"
+"parser.c"
+"tree.c"
+"hash.c"
+"list.c"
+"xmlIO.c"
+"xmlmemory.c"
+"uri.c"
+"valid.c"
+"xlink.c"
+"debugXML.c"
+"xpath.c"
+"xpointer.c"
+"xinclude.c"
+"DOCBparser.c"
+"catalog.c"
+"globals.c"
+"threads.c"
+"c14n.c"
+"xmlstring.c"
+"buf.c"
+"xmlregexp.c"
+"xmlschemas.c"
+"xmlschemastypes.c"
+"xmlunicode.c"
+"xmlreader.c"
+"relaxng.c"
+"dict.c"
+"SAX2.c"
+"xmlwriter.c"
+"legacy.c"
+"chvalid.c"
+"pattern.c"
+"xmlsave.c"
+"xmlmodule.c"
+"schematron.c"
+)
+
+# list PREPEND
+set(TMP_LIST "")
+foreach(file ${LIBXML2_SOURCES})
+  list(APPEND TMP_LIST "${CMAKE_CURRENT_BINARY_DIR}/${file}")
+endforeach()
+set(LIBXML2_SOURCES ${TMP_LIST})
+
+add_library(
+  xml2
+  STATIC
+  ${LIBXML2_SOURCES}
+)
+
+target_include_directories(
+  xml2
+  PUBLIC ${CMAKE_CURRENT_BINARY_DIR}/include
+)
+
+target_compile_definitions(
+  xml2
+  PUBLIC
+  LIBXML_THREAD_ENABLED=1
+  STATIC_LIBXML
+)

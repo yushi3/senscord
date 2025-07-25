@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdk>
+  <streams>
+    <stream key="pseudo_image_stream.0">
+      <address instanceName="pseudo_image_instance" type="image" port="0"/>
+      <arguments>
+        <argument name="width" value="640"/>
+        <argument name="height" value="480"/>
+        <argument name="fps" value="60"/>
+      </arguments>
+    </stream>
+
+    <defaults>
+      <frame buffering="on" num="3"/>
+    </defaults>
+  </streams>
+
+  <instances>
+    <instance name="pseudo_image_instance" component="component_pseudo_image">
+    </instance>
+  </instances>
+
+  <core>
+    <log level="info" tag="core"/>
+    <log level="info" tag="server"/>
+    <log level="info" tag="defaults"/>
+  </core>
+</sdk>

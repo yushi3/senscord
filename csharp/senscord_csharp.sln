@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "senscord_csharp", "lib\senscord_csharp.csproj", "{7595B7FE-92B0-444D-959A-FE8789575294}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "simple_stream", "sample\simple_stream\simple_stream.csproj", "{72F57FF6-BDD2-4A7F-A67E-47BD708B1AC8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "stream_recorder", "sample\stream_recorder\stream_recorder.csproj", "{A86549B2-893C-4041-B732-49DC75872C79}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7595B7FE-92B0-444D-959A-FE8789575294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7595B7FE-92B0-444D-959A-FE8789575294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7595B7FE-92B0-444D-959A-FE8789575294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7595B7FE-92B0-444D-959A-FE8789575294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72F57FF6-BDD2-4A7F-A67E-47BD708B1AC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72F57FF6-BDD2-4A7F-A67E-47BD708B1AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72F57FF6-BDD2-4A7F-A67E-47BD708B1AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72F57FF6-BDD2-4A7F-A67E-47BD708B1AC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A86549B2-893C-4041-B732-49DC75872C79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A86549B2-893C-4041-B732-49DC75872C79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A86549B2-893C-4041-B732-49DC75872C79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A86549B2-893C-4041-B732-49DC75872C79}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A24C411-5A5D-4794-8DA7-0EDA90ABA70F}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		    Policies = $0
+		    $0.DotNetNamingPolicy = $1
+		    $1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		    $0.TextStylePolicy = $2
+		    $2.FileWidth = 80
+		    $2.TabsToSpaces = True
+		    $2.EolMarker = Unix
+		    $2.scope = text/x-csharp
+		    $0.CSharpFormattingPolicy = $3
+		    $3.scope = text/x-csharp
+	EndGlobalSection
+EndGlobal

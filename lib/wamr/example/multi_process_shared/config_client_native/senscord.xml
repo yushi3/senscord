@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdk>
+  <streams>
+    <stream key="pseudo_image_stream.0">
+      <address instanceName="pseudo_image_instance" type="image" port="0"/>
+      <client instanceName="client_instance"/>
+    </stream>
+
+    <defaults>
+      <frame buffering="on" num="3"/>
+    </defaults>
+  </streams>
+
+  <instances>
+    <instance name="client_instance" component="component_client">
+      <arguments>
+        <argument name="connection" value="tcp"/>
+        <argument name="address" value="0.0.0.0:8080"/>
+        <argument name="addressSecondary" value="0.0.0.0:8081"/>
+      </arguments>
+    </instance>
+    <instance name="pseudo_image_instance" component="component_pseudo_image">
+    </instance>
+  </instances>
+
+  <core>
+    <log level="info" tag="core"/>
+    <log level="info" tag="defaults"/>
+
+    <converters>
+      <converter name="senscord_core_converter" type="property|rawdata"/>
+    </converters>
+  </core>
+</sdk>

@@ -1,0 +1,50 @@
+/*
+ * SPDX-FileCopyrightText: 2021-2023 Sony Semiconductor Solutions Corporation
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+#ifndef SENSCORD_CONFIG_H_
+#define SENSCORD_CONFIG_H_
+
+/* Logger */
+#cmakedefine SENSCORD_LOG_ENABLED
+
+/* Status */
+#cmakedefine SENSCORD_STATUS_MESSAGE_ENABLED
+#cmakedefine SENSCORD_STATUS_TRACE_ENABLED
+
+/* Multi-process */
+#cmakedefine SENSCORD_SERVER
+#cmakedefine SENSCORD_SERVER_ROS
+#cmakedefine SENSCORD_SERVER_WEBSOCKET
+#cmakedefine SENSCORD_SERVER_SETTING
+#cmakedefine SENSCORD_SERVER_SEARCH_SSDP
+#cmakedefine SENSCORD_SERVER_SEARCH_UCOM
+
+/* Allocator */
+#cmakedefine SENSCORD_ALLOCATOR_SHARED_MEMORY
+
+/* Recorder */
+#cmakedefine SENSCORD_RECORDER
+#cmakedefine SENSCORD_RECORDER_RAW
+#cmakedefine SENSCORD_RECORDER_SKV
+#cmakedefine SENSCORD_RECORDER_LOADER
+
+/* Player */
+#cmakedefine SENSCORD_PLAYER
+#cmakedefine SENSCORD_PLAYER_RAW
+#cmakedefine SENSCORD_PLAYER_SKV
+
+/* API */
+#cmakedefine SENSCORD_API_C
+#cmakedefine SENSCORD_API_PYTHON
+#cmakedefine SENSCORD_API_CSHARP
+#cmakedefine SENSCORD_API_JAVA
+#cmakedefine SENSCORD_API_WASM
+
+/* Core functions */
+#cmakedefine SENSCORD_STREAM_VERSION
+#cmakedefine SENSCORD_STREAM_EVENT_ARGUMENT
+#cmakedefine SENSCORD_SERIALIZE
+
+#endif  /* SENSCORD_CONFIG_H_ */

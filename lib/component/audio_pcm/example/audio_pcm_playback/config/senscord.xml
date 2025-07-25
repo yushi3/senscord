@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdk>
+  <streams>
+    <stream key="audio_stream">
+      <address instanceName="audio_instance" type="audio" port="0"/>
+    </stream>
+
+    <!-- Defining the default -->
+    <defaults>
+      <frame buffering="on" num="3"/>
+    </defaults>
+  </streams>
+
+  <instances>
+    <instance name="audio_instance" component="component_audio_pcm">
+      <arguments>
+        <!--
+          "device_name"
+          Specifies the device name.
+          Example when the backend is ALSA:
+            value="default"
+            value="hw"
+            value="hw:0"
+            value="plughw"
+            value="plughw:0"
+            value="plughw:0,1"
+        -->
+        <argument name="device_name" value="plughw" />
+
+        <!--
+          "buffer_period"
+          Specifies the buffer period in milliseconds.
+        -->
+        <argument name="buffer_period" value="3000" />
+      </arguments>
+    </instance>
+  </instances>
+
+  <core>
+    <!-- Log Settings -->
+    <log level="info" tag="core"/>
+    <log level="info" tag="server"/>
+    <log level="info" tag="defaults"/>
+    <log level="info" tag="audio"/>
+    <log level="info" tag="memory"/>
+  </core>
+</sdk>

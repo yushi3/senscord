@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>SensCord</RootNamespace>
+    <FileVersion>1.11.1.0</FileVersion>
+    <Product>SensCord CSharp Interface</Product>
+    <Version>1.11.1.0</Version>
+    <Copyright>Copyright 2017-2024 Sony Semiconductor Solutions Corporation.</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="netstandard" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MessagePack" Version="2.5.187" />
+    <PackageReference Include="System.Memory" Version="4.5.5" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
+  </ItemGroup>
+
+</Project>

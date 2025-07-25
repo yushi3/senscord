@@ -1,0 +1,61 @@
+# SPDX-FileCopyrightText: 2017-2023 Sony Semiconductor Solutions Corporation
+#
+# SPDX-License-Identifier: Apache-2.0
+
+
+################################################################################
+
+################################################################################
+
+set(PROJECT_NAME component_player)
+project(${PROJECT_NAME} VERSION ${SensCord_VERSION})
+
+set(TARGET_NAME ${PROJECT_NAME})
+
+set(SOURCE_OBJECTS
+    ${PROJECT_SOURCE_DIR}/src/player_component.cpp
+    ${PROJECT_SOURCE_DIR}/src/player_property_accessor.cpp
+    ${PROJECT_SOURCE_DIR}/src/player_component_port_data.cpp
+    ${PROJECT_SOURCE_DIR}/src/player_frame_file_manager.cpp
+    ${PROJECT_SOURCE_DIR}/src/player_stream_file_manager.cpp
+    ${PROJECT_SOURCE_DIR}/src/player_send_interval_manager.cpp
+    ${PROJECT_SOURCE_DIR}/src/player_component_util.cpp
+)
+
+if(WIN32)
+  set(PROJECT_NAME_FULL "Player Component")
+  set(PROJECT_DESCRIPTION "Player component library for SensCord")
+  configure_file(
+      ${TEMPLATE_WINDOWS_DLL_VERSION}
+      ${PROJECT_BINARY_DIR}/version.rc
+      @ONLY)
+  list(APPEND SOURCE_OBJECTS
+      ${PROJECT_BINARY_DIR}/version.rc)
+endif()
+
+# Create library target.
+add_library(${TARGET_NAME} SHARED ${SOURCE_OBJECTS})
+
+# Include directory.
+target_include_directories(${TARGET_NAME} PRIVATE ${PROJECT_SOURCE_DIR})
+
+# config xml file
+set(COMPONENT_XML_FILE ${PROJECT_SOURCE_DIR}/config/${TARGET_NAME}.xml)
+
+# Set target folder name
+set_target_properties(${TARGET_NAME} PROPERTIES FOLDER ${FOLDER_NAME})
+
+# link files
+target_link_libraries(${TARGET_NAME} senscord)
+
+target_compile_options(${TARGET_NAME} PRIVATE ${SSDK_COMPILE_OPTIONS})
+
+# Create output destination directory
+add_custom_command(TARGET  ${TARGET_NAME} PRE_BUILD
+                   COMMAND ${CMAKE_COMMAND} -E make_directory
+                           ${SSDK_COMPONENT_OUT_DIR})
+
+install_component(${TARGET_NAME} ${COMPONENT_XML_FILE})
+
+### Copy Config file.
+add_configure_file(${TARGET_NAME} ${COMPONENT_XML_FILE} ${SSDK_COMPONENT_OUT_DIR})
