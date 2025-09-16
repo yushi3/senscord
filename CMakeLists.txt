@@ -645,7 +645,7 @@ install(EXPORT ${SSDK_EXPORT_NAME}
         DESTINATION ${SSDK_CMAKE_INSTALL_DIR})
 
 # Install license
-install(FILES COPYING.sony DESTINATION .)
+install(FILES LICENSE DESTINATION .)
 
 ################################################################################
 #  Build application
