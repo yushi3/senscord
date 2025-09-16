@@ -32,3 +32,4 @@ jobs:
             cd build
             cmake ../
             cmake --build . --parallel $(nproc) --verbose
+            cmake --install . --prefix ${HOME}/install
