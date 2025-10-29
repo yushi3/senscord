@@ -14,3 +14,5 @@ RUN sudo sudo apt-get install -y ruby-full
 RUN sudo gem install asciidoctor
 RUN sudo gem install asciidoctor-diagram
 RUN sudo gem install asciidoctor-diagram-plantuml
+
+RUN apt-get install -y clangd

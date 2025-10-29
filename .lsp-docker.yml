@@ -1,0 +1,12 @@
+lsp:
+  server:
+    type: docker
+    subtype: image
+    name: senscord-builder:latest
+    server: clangd
+    launch_command: "clangd"
+  mappings:
+    - source: .
+      destination: /workspaces/senscord
+  CompileFlags:
+    CompilationDatabase: build
